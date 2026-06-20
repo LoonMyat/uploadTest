@@ -18,7 +18,7 @@ COPY . .
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
 
 # 2. Run stage
-FROM openjdk:17-jdk-slim
+FROM openjdk:25-jdk-slim
 WORKDIR /app
 COPY --from=build /app/target/*.jar app.jar
 EXPOSE 8080

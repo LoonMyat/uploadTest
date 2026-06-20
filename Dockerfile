@@ -12,7 +12,7 @@
 # CMD ["sh", "-c", "java -Dserver.port=${PORT:-8080} -jar target/*.jar"]
 
 # 1. Build stage
-FROM maven:3.8.5-openjdk-25 AS build
+FROM maven:3.9.12-openjdk-25 AS build
 WORKDIR /app
 COPY . .
 RUN chmod +x mvnw && ./mvnw clean package -DskipTests
